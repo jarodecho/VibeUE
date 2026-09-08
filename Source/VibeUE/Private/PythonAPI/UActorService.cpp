@@ -2,6 +2,7 @@
 
 #include "PythonAPI/UActorService.h"
 #include "GameFramework/Actor.h"
+#include "Misc/ConfigCacheIni.h"
 #include "Engine/World.h"
 #include "EngineUtils.h"
 #include "Editor.h"

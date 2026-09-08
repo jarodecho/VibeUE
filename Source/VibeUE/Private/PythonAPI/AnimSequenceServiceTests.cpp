@@ -1,6 +1,7 @@
 // Copyright Buckley Builds LLC 2026 All Rights Reserved.
 
 #include "Misc/AutomationTest.h"
+#include "AssetRegistry/AssetData.h"
 
 #if WITH_AUTOMATION_TESTS
 

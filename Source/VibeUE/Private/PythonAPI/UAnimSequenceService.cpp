@@ -34,6 +34,10 @@
 #include "Modules/ModuleManager.h"
 #include "Utils/VibeUEPaths.h"
 #include "ObjectTools.h"
+#include "AssetRegistry/AssetData.h"
+#include "GenericPlatform/GenericPlatformFile.h"
+#include "HAL/PlatformFilemanager.h"
+#include "TextureResource.h"
 
 // ============================================================================
 // PRIVATE HELPERS

@@ -3,6 +3,9 @@
 #include "PythonAPI/UMaterialService.h"
 #include "Core/JsonValueHelper.h"
 #include "Materials/Material.h"
+#if __has_include("MaterialDomain.h")
+#include "MaterialDomain.h" // StaticEnum<EMaterialDomain> lives with the UENUM definition
+#endif
 #include "Materials/MaterialInstance.h"
 #include "Materials/MaterialInstanceConstant.h"
 #include "Materials/MaterialExpressionParameter.h"

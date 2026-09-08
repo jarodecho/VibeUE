@@ -25,6 +25,8 @@
 #include "Dom/JsonObject.h"
 #include "Serialization/JsonSerializer.h"
 #include "Serialization/JsonWriter.h"
+#include "AssetRegistry/AssetData.h"
+#include "UObject/UObjectIterator.h"
 
 // =================================================================
 // Helper Methods

@@ -21,6 +21,7 @@
 #include "Serialization/JsonWriter.h"
 #include "Templates/Function.h"
 #include "UObject/UnrealType.h"
+#include "UObject/UObjectIterator.h"
 
 TArray<FBTNodeClassInfo> UBehaviorTreeService::GetAvailableNodeTypes(const FString& Category)
 {

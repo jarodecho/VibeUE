@@ -95,6 +95,8 @@
 #include "Types/MVVMFieldVariant.h"
 #include "ViewModel/MVVMViewModelBlueprint.h"
 #include "WidgetBlueprintExtension.h"
+#include "AssetRegistry/AssetData.h"
+#include "UObject/UObjectIterator.h"
 
 // Static list of available widget types
 static const TArray<FString> GAvailableWidgetTypes = {

@@ -21,6 +21,8 @@
 #include "UObject/Package.h"
 #include "ObjectTools.h"
 #include "UObject/ReferencerFinder.h"
+#include "AssetRegistry/AssetData.h"
+#include "HAL/PlatformFilemanager.h"
 
 // ========== Texture Operations ==========
 

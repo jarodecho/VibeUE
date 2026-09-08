@@ -13,6 +13,7 @@
 #include "HAL/FileManager.h"
 #include "Misc/PackageName.h"
 #include "UObject/Package.h"
+#include "AssetRegistry/AssetData.h"
 
 namespace VibeBT
 {

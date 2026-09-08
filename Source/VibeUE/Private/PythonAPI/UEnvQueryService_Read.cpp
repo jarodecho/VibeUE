@@ -1,6 +1,7 @@
 // Copyright Buckley Builds LLC 2026 All Rights Reserved.
 
 #include "PythonAPI/UEnvQueryService.h"
+#include "UObject/UObjectIterator.h"
 
 #if WITH_VIBEUE_EQS
 

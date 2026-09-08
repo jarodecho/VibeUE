@@ -9,6 +9,7 @@
 #include "AssetRegistry/IAssetRegistry.h"
 #include "Engine/Blueprint.h"
 #include "Misc/Paths.h"
+#include "AssetRegistry/AssetData.h"
 
 const TMap<FString, FName>& FBlueprintTypeParser::GetBasicTypeMap()
 {

@@ -35,6 +35,7 @@
 #include "UObject/SavePackage.h"
 #include "Misc/PackageName.h"
 #include "AssetRegistry/AssetRegistryModule.h"
+#include "AssetRegistry/AssetData.h"
 
 // =================================================================
 // Helper Methods

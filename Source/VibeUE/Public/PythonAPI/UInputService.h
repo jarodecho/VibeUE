@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "ToolsetRegistry/ToolsetDefinition.h"
+#include "InputCoreTypes.h"
 #include "UInputService.generated.h"
 
 /**

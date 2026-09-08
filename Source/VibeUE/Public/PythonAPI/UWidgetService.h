@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "ToolsetRegistry/ToolsetDefinition.h"
 #include "Types/MVVMBindingMode.h"
+#include "Layout/Margin.h"
+#include "Types/SlateEnums.h"
 #include "UWidgetService.generated.h"
 
 /**

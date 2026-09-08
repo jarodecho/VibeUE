@@ -15,6 +15,10 @@
 #include "SkeletalMeshEditorSubsystem.h"
 #include "SkeletonModifier.h"
 #include "PhysicsEngine/PhysicsAsset.h"
+#include "Animation/AnimBlueprint.h"
+#include "Animation/AnimInstance.h"
+#include "AssetRegistry/AssetData.h"
+#include "Engine/Blueprint.h"
 
 // Static map for skeleton modifiers - using TStrongObjectPtr for GC safety
 TMap<FString, TStrongObjectPtr<USkeletonModifier>> USkeletonService::ActiveModifiers;

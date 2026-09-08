@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "ToolsetRegistry/ToolsetDefinition.h"
 #include "UMaterialService.h"
+#include "SceneTypes.h"
 #include "UMaterialNodeService.generated.h"
 
 class UMaterial;

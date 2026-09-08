@@ -42,6 +42,8 @@
 
 #include "GameplayTagContainer.h"
 #include "PythonAPI/UActorService.h"
+#include "AssetRegistry/AssetData.h"
+#include "UObject/TextProperty.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogStateTreeService, Log, All);
 

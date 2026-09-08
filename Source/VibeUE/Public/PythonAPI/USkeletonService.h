@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "ToolsetRegistry/ToolsetDefinition.h"
+#include "AnimationRuntime.h"
 #include "USkeletonService.generated.h"
 
 /**

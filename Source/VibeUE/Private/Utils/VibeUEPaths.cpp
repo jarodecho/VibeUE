@@ -6,6 +6,8 @@
 #include "HAL/FileManager.h"
 
 #include "PluginDescriptor.h"
+#include "GenericPlatform/GenericPlatformFile.h"
+#include "HAL/PlatformFilemanager.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogVibeUEPaths, Log, All);
 

@@ -6,6 +6,8 @@
 #include "ToolsetRegistry/ToolsetDefinition.h"
 #include "UActorService.generated.h"
 
+class FLevelEditorViewportClient;
+
 /**
  * View direction for camera positioning relative to an actor.
  * Used with GetActorViewCamera to calculate camera position that frames an actor.

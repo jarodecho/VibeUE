@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "ToolsetRegistry/ToolsetDefinition.h"
+#include "AlphaBlend.h"
 #include "UAnimMontageService.generated.h"
 
 // ============================================================================

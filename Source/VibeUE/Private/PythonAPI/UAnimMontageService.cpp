@@ -17,6 +17,7 @@
 #include "AssetToolsModule.h"
 #include "Factories/AnimMontageFactory.h"
 #include "ObjectTools.h"
+#include "AssetRegistry/AssetData.h"
 
 // ============================================================================
 // PRIVATE HELPERS

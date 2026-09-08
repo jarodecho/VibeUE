@@ -87,6 +87,7 @@
 #include "Serialization/JsonWriter.h"
 #include "Serialization/JsonSerializer.h"
 #include "Policies/CondensedJsonPrintPolicy.h"
+#include "AssetRegistry/AssetData.h"
 
 namespace
 {

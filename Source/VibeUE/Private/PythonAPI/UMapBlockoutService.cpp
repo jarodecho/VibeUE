@@ -12,6 +12,7 @@
 #include "Serialization/JsonWriter.h"
 #include "Dom/JsonObject.h"
 #include "Algo/Reverse.h"
+#include "HAL/PlatformFilemanager.h"
 
 // Stage 0 — landcover grid export, JSON writer, river centerline extraction.
 // Stages 1-5 + renderers + orchestrators in UMapBlockoutService_Stages.cpp.

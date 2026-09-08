@@ -10,6 +10,7 @@
 #include "HAL/FileManager.h"
 #include "Misc/Guid.h"
 #include "Misc/PackageName.h"
+#include "Misc/Paths.h"
 #include "UObject/Package.h"
 #include "UObject/UObjectHash.h"
 

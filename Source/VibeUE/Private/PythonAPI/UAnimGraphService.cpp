@@ -56,6 +56,7 @@
 #include "Serialization/JsonReader.h"
 #include "Serialization/JsonSerializer.h"
 #include "UObject/UnrealType.h"
+#include "Engine/SkeletalMesh.h"
 
 // ============================================================================
 // PRIVATE HELPERS

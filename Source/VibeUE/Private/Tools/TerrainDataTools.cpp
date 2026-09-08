@@ -16,6 +16,8 @@
 #include "HAL/PlatformProcess.h"
 #include "HAL/PlatformFileManager.h"
 #include "Settings/VibeUEEditorSettings.h"
+#include "HAL/PlatformFilemanager.h"
+#include "Misc/ConfigCacheIni.h"
 
 // ---------------------------------------------------------------------------
 // Helpers

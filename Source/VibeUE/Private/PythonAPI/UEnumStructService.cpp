@@ -16,6 +16,7 @@
 #include "UObject/UObjectIterator.h"
 #include "UObject/StructOnScope.h"
 #include "EdGraph/EdGraphPin.h"
+#include "UObject/TextProperty.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogEnumStructService, Log, All);
 

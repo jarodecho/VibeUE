@@ -17,6 +17,7 @@
 #include "Containers/Ticker.h"
 #include "HAL/FileManager.h"
 #include "HAL/PlatformFileManager.h"
+#include "GenericPlatform/GenericPlatformFile.h"
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "AssetRegistry/IAssetRegistry.h"
 #include "FileUtilities/ZipArchiveReader.h"

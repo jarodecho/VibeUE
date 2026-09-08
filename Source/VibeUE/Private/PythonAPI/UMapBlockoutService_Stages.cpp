@@ -5,6 +5,7 @@
 #include "MapBlockout/MapBlockoutImage.h"
 #include "Misc/Paths.h"
 #include "HAL/PlatformFileManager.h"
+#include "GenericPlatform/GenericPlatformFile.h"
 
 // Stage 1-5 generators, the Final Pass, the renderers, and the orchestrators.
 // Cell-for-cell port of the documented map-blockout algorithm. Each check name
