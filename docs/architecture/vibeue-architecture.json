@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "VibeUE 插件架构",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/kevinpbuckley/VibeUE",
+      "revision": "44794466b19fc09943ee4617378d6834be5f8386"
+    }
+  },
+  "components": [
+    {
+      "id": "agents",
+      "type": "external",
+      "label": "AI Agents",
+      "sublabel": "MCP 客户端",
+      "pos": [36, 335],
+      "size": [135, 64]
+    },
+    {
+      "id": "mcp",
+      "type": "security",
+      "label": "Unreal MCP 服务器",
+      "sublabel": "UE 5.8 原生端点",
+      "tag": "引擎原生",
+      "pos": [270, 335],
+      "size": [150, 64]
+    },
+    {
+      "id": "toolsetreg",
+      "type": "cloud",
+      "label": "ToolsetRegistry",
+      "sublabel": "AICallable 工具集注册",
+      "tag": "引擎原生",
+      "pos": [515, 335],
+      "size": [140, 64]
+    },
+    {
+      "id": "skillsys",
+      "type": "cloud",
+      "label": "AgentSkill 系统",
+      "sublabel": "技能发现与加载",
+      "tag": "引擎原生",
+      "pos": [420, 100],
+      "size": [150, 60]
+    },
+    {
+      "id": "skills",
+      "type": "frontend",
+      "label": "Content/Skills",
+      "sublabel": "38 个技能包 · SKILL.md",
+      "tag": "VibeUE",
+      "pos": [695, 100],
+      "size": [175, 60],
+      "sources": [
+        { "path": "Content/Skills/landscape/SKILL.md", "label": "技能包示例" }
+      ]
+    },
+    {
+      "id": "services",
+      "type": "backend",
+      "label": "编辑器服务层",
+      "sublabel": "45 × UToolsetDefinition 工具集",
+      "tag": "VibeUE",
+      "pos": [830, 260],
+      "size": [195, 160],
+      "sources": [
+        { "path": "Source/VibeUE/Private/PythonAPI/UPerformanceService.cpp", "label": "服务实现示例" },
+        { "path": "Source/VibeUE/Private/Module.cpp", "line": 392, "label": "RegisterToolsets" }
+      ]
+    },
+    {
+      "id": "core",
+      "type": "backend",
+      "label": "Core 桥接层",
+      "sublabel": "FToolRegistry · MCP 桥接",
+      "tag": "VibeUE",
+      "pos": [730, 545],
+      "size": [180, 60],
+      "sources": [
+        { "path": "Source/VibeUE/Private/Core/VibeUEMCPToolBridge.cpp", "label": "MCP 桥接" },
+        { "path": "Source/VibeUE/Private/Core/ToolRegistry.cpp", "label": "工具注册表" }
+      ]
+    },
+    {
+      "id": "python",
+      "type": "backend",
+      "label": "Python 层",
+      "sublabel": "vibeue.py · exec · schema",
+      "tag": "VibeUE",
+      "pos": [965, 545],
+      "size": [170, 60],
+      "sources": [
+        { "path": "Content/Python/vibeue.py", "label": "exec_tool 客户端" },
+        { "path": "Source/VibeUE/Private/Tools/PythonExecutionService.cpp", "label": "Python 执行服务" }
+      ]
+    },
+    {
+      "id": "editor",
+      "type": "backend",
+      "label": "编辑器子系统",
+      "sublabel": "事务缓冲 · EdGraph · PIE",
+      "tag": "引擎原生",
+      "pos": [1165, 335],
+      "size": [170, 72]
+    },
+    {
+      "id": "fabcom",
+      "type": "external",
+      "label": "fab.com",
+      "sublabel": "EOS 登录态 · 资源下载",
+      "pos": [1195, 90],
+      "size": [145, 60],
+      "sources": [
+        { "path": "Source/VibeUE/Private/PythonAPI/Fab/FabAuthBridge.cpp", "label": "EOS 认证桥" }
+      ]
+    },
+    {
+      "id": "terrain",
+      "type": "external",
+      "label": "地形数据 API",
+      "sublabel": "高度图 · 水体 · geocode",
+      "pos": [1195, 235],
+      "size": [150, 64],
+      "sources": [
+        { "path": "Source/VibeUE/Private/Tools/TerrainDataTools.cpp", "label": "地形数据工具" }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "security-group",
+      "label": "VibeUE 插件（模块 + 内容）",
+      "wraps": ["skills", "services", "core", "python"],
+      "pad": 18
+    }
+  ],
+  "connections": [
+    { "id": "c1", "from": "agents", "to": "mcp", "label": "MCP stdio/HTTP", "variant": "emphasis" },
+    { "id": "c2", "from": "mcp", "to": "toolsetreg", "label": "工具调用路由" },
+    { "id": "c3", "from": "toolsetreg", "to": "services", "label": "AICallable 调用", "variant": "emphasis" },
+    { "id": "c4", "from": "services", "to": "editor", "label": "EdGraph · 事务 · PIE", "variant": "emphasis" },
+    { "id": "c5", "from": "mcp", "to": "skillsys", "label": "技能发现", "fromSide": "top", "toSide": "bottom" },
+    { "id": "c6", "from": "skillsys", "to": "skills", "label": "技能下发" },
+    { "id": "c7", "from": "core", "to": "mcp", "label": "JSON Schema 工具注册" },
+    { "id": "c8", "from": "services", "to": "python", "label": "python_exec", "fromSide": "bottom", "toSide": "top" },
+    { "id": "c9", "from": "services", "to": "fabcom", "label": "EOS 下载导入", "variant": "dashed", "fromSide": "top", "toSide": "left" },
+    { "id": "c10", "from": "services", "to": "terrain", "label": "高度图 · 地理编码", "variant": "dashed", "fromSide": "top", "toSide": "left" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "单进程 · 无独立服务器",
+      "items": [
+        "VibeUE 直接注册进 UE 5.8 原生 ToolsetRegistry 与 MCP 端点",
+        "AgentSkill 系统下发 Content/Skills 技能包",
+        "任何 MCP 客户端（Claude Code / Cursor / Copilot）驱动编辑器"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "引擎未覆盖的深度",
+      "items": [
+        "Performance：frame_timing 判定 CPU/GPU 瓶颈 + Insights trace 分析",
+        "TransactionService：事务缓冲分组、undo / redo、检查点回滚",
+        "WorkflowService：任务日志溯源 + PIE 异步场景验证",
+        "Python 优先：vibeue.py 按 schema 直调任意工具集"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "安全护栏",
+      "items": [
+        "PIE 与编辑器打开状态感知的写入拒绝保护",
+        "批量维护先 dry-run，可恢复续跑",
+        "Fab 复用 Epic 账号 EOS 登录态；地形 API 需可选密钥"
+      ]
+    }
+  ]
+}
